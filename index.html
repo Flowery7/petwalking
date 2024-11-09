@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Sitting Business</title>
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="index, follow">
+
+<!-- Security Headers -->
+
+<!-- Strict Transport Security (HSTS) to enforce HTTPS -->
+<meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+
+<!-- Prevent XSS attacks by enabling browser-based protection -->
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+
+<!-- Prevent content sniffing (MIME type security) -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+<!-- Prevent clickjacking attacks -->
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  
+  <!-- Updated font for a softer, fun look -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+ /* Header Section */
+.header-section {
+  padding-top: 1rem !important; /* Adjust this to bring the title closer to the image */
+  padding-bottom: 2rem !important;
+}
+
+/* Title and Header Font */
+h1, h2, .section-title {
+  font-family: 'Baloo 2', sans-serif; /* New softer, fun font */
+  color: #000;
+  margin-top: 0 !important; /* Removes any default margin */
+}
+
+/* About Section Adjustments */
+#about {
+  padding-top: 1rem !important; /* Reduce padding to bring it closer to the header */
+  padding-bottom: 4rem !important;
+}
+
+#about h1,
+#about p {
+  margin-top: 0 !important; /* Ensures no extra space at the top of About section elements */
+  margin-bottom: 1rem !important; /* Adjust if extra spacing is needed between elements */
+}
+
+
+    }
+    .header-section, .service-item {
+      border-radius: 8px;
+      .header-section {
+  padding-top: 1rem; /* Adjust this value as needed */
+  padding-bottom: 1rem; /* Keeps some space below if needed */
+}
+
+    }
+    .service-item {
+  position: relative;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 1.1); /* Subtle shadow for lift */
+}
+
+/* Hover Effect for Extra Lift */
+.service-item:hover {
+  transform: translateY(-5px); /* Slight upward movement */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+
+    }
+    .btn-primary {
+      background-color: #333;
+      border: none;
+      font-weight: bold;
+      
+    }
+    .service-more-info {
+      display: none;
+    }
+    .service-more-info.active {
+      display: block;
+    }
+    
+  /* Make sure this matches your title font */
+@import url('https://fonts.googleapis.com/css2?family=YourTitleFont&display=swap');
+
+.bouncy-phone {
+  font-family: 'YourTitleFont', sans-serif; /* Replace with your title font */
+  font-size: 28px; /* Make sure it's large enough */
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Bouncy animation effect */
+.bouncy-phone:hover {
+  animation: bounce 1s ease infinite;
+}
+
+/* Keyframe for bounce effect */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+    /* Footer styling */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1.5rem 0;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    /* Responsive container for embedded Facebook videos */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+}
+
+.video-container .fb-video,
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+    
+  </style>
+</head>
+<body>
+
+<!-- Navigation Header -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+     <a class="navbar-brand" href="#">
+   <img src="/Paw-some pet care.png" alt="Paw-some pet care ltd, pet sitting , animal ambulance, dog walking service, huddersfield" style="height: 80px;">
+ </a>
+    <a class="navbar-brand" href="#">Paw-Some Pet Care Ltd</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#areas">Areas Covered</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<header class="header-section text-center d-flex flex-column justify-content-center align-items-center" style="background: url('/pet_sitting_huddersfield_image.png') no-repeat center/cover; height: 60vh; padding-top: 70px;">
+</header>
+
+
+<!-- About Section -->
+<section id="about" class="container py-5 text-center">
+  <h1 class="section-title"><strong>Welcome to<br> Paw-Some Pet Care</strong></h1>
+  <p class="mt-3">Reliable, friendly, and caring pet sitting for your furry friends!</p>
+  <p>We offer top-quality pet sitting services that give you peace of mind when you’re away. Our experienced team ensures your pets are well taken care of with love and care. We believe every pet deserves to be treated like family, whether it’s a daily walk to stretch their legs or an urgent trip to the vet. Our passion comes from the joy pets bring us, and we’re proud to offer a service that reflects the love and dedication we feel for them. That’s what drives us, and that’s why we’re here—to bring peace of mind to pet owners and happiness to every pet we meet.<br><br>Rest assured, we're fully insured and DBS checked for your peace of mind. Our qualifications speak for themselves:<br><br> <strong>Animal First Aid, Certified Veterinary Assistant, Diploma Diploma in Veterinary Medicine, Expertise in Dog Health, Breeds, and Anatomy Certified puppy and dog training Natural Remedies for Dog Illnesses and Dog Training Animal Science Dog Grooming and Parasite Control.</strong></p> <img src="/paw-some_pet_care_image_leaflet.png" alt="Pet Sitting Image" class="img-fluid mt-4" style="max-width: 100%; height: auto;"><br><br>
+  <h2 class="section-title text-center mb-4">Who we work with</h2>
+  <p class="mt-3">We’re also proud to work closely with the <strong>PDSA </strong>(we provide drop-offs at their Bradford branch) as well as <strong>Donaldson's Vets </strong>and <strong>Calder Vets</strong>, ensuring your pets get the best care when needed.<br><br>
+  Available 24/7 to ensure your pets are happy, healthy, and cared for.<br><br>
+ </p><br><br>
+ <h2 class="section-title text-center mb-4" style="font-size: 1.5rem;">Trusted Services</h2>
+  <p class="mt-3">Whether your pup needs a quick stroll, an energy-burning jog, or a full-day romp, we’re here to make sure every walk is a highlight of their day! Our team knows all the best sniffing spots and routes, so your dog will be happily worn out (and maybe just a little muddy!) when they return home.</p><br><br><h2 class="section-title text-center mb-4" style="font-size: 1.5rem;">Here in emergancies</h2>
+  <p class="mt-3">Unexpected pet emergencies? We’ve got it covered! Our 24/7 pet ambulance service is ready to roll, ensuring safe and speedy trips to the vet when minutes count. With pet-focused first aid and stress-free transportation, your furry family members are in the safest of hands, no matter the hour.</p><br><br><h2 class="section-title text-center mb-4" style="font-size: 1.5rem;">Taking care of your pets</h2>
+  <p class="mt-3">Professional, Pet-Loving Team: Each member is trained to handle pets of all sizes and personalities with patience and care.
+Safety First: Fully-equipped pet ambulance mean your pets’ well-being is always our priority.
+Local Knowledge: We know the area like the back of our paw, so you’ll have peace of mind knowing your pets are exploring safely in familiar surroundings.</p>
+</section>
+
+
+<section id="services" class="container py-5">
+  <h2 class="section-title text-center mb-4">Our Services</h2>
+  <div class="row row-cols-2 row-cols-md-4 g-4">
+    <!-- Service 1 -->
+    <div class="col">
+      <div class="service-item text-center p-4 border rounded shadow-sm">
+        <img src="/pet_ambulance_Huddersfield_service.png" alt="Pet ambulance in Brighouse, Dewsbury East, Dewsbury West, Elland, Sowerby Bridge, Halifax, Huddersfield, Holmfirth, Meltham, Fenay Bridge " class="img-fluid mb-3" style="max-width: 100px;">
+        <h5>Ambulance</h5>
+        <p>24/7 Ambulance services.</p>
+        <button class="btn btn-link" onclick="toggleInfo(this)">More Info</button>
+        <div class="service-more-info">
+          <p>We are ready if your pet needs emergency assistance and taking to a vet.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Service 2 -->
+    <div class="col">
+      <div class="service-item text-center p-4 border rounded shadow-sm">
+        <img src="/pet_ambulance_Huddersfield_service.png" alt="Ultrasound service for pets, animals dogs covering the hudderfield area" class="img-fluid mb-3" style="max-width: 100px;">
+        <h5>Ultra Sound</h5>
+        <p>Comprehensive diognostic services.</p>
+        <button class="btn btn-link" onclick="toggleInfo(this)">More Info</button>
+        <div class="service-more-info">
+          <p>Check on your pet’s well-being, development and general health.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Service 3 -->
+    <div class="col">
+      <div class="service-item text-center p-4 border rounded shadow-sm">
+        <img src="/dog_walking_services.png" alt="Pet walking services, pet walking business covering all area's in Brighouse, Dewsbury East, Dewsbury West, Elland, Sowerby Bridge, Halifax, Huddersfield, Holmfirth, Meltham, Fenay Bridge " class="img-fluid mb-3" style="max-width: 100px;">
+        <h5>Walking</h5>
+        <p>Healthy meal, happy pets, every day.</p>
+        <button class="btn btn-link" onclick="toggleInfo(this)">More Info</button>
+        <div class="service-more-info">
+          <p>Succulent and delicious meals for your furry friends. Packed with nutrients and goodness.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Service 4 -->
+    <div class="col">
+      <div class="service-item text-center p-4 border rounded shadow-sm">
+        <img src="/Dog_feeding_service.png" alt="Healthy dog food feeding service supporting wellbeing for animals. Healthy dogs. Chews and dog treats" class="img-fluid mb-3" style="max-width: 100px;">
+        <h5>Drop Inns</h5>
+        <p>Healthy Meals, happy pets, every day.</p>
+        <button class="btn btn-link" onclick="toggleInfo(this)">More Info</button>
+        <div class="service-more-info">
+          <p>Come and pay us a visit, your pet will have a wonderful time, great for socialising, and behavour.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Areas Covered Section -->
+<section id="areas" class="container py-5 text-center">
+  <h2 class="section-title mb-4">Areas We Cover</h2>
+  <p>Brighouse · Dewsbury East · Dewsbury West · Elland · Sowerby Bridge · Halifax · Huddersfield · Holmfirth · Meltham · Fenay Bridge</p>
+  <div id="map" style="height: 200px;"></div> <!-- Set map container dimensions -->
+</section>
+<script>
+  // Initialize map
+  var map = L.map('map').setView([53.643, -1.776], 10); // Adjust coordinates to your central area
+  
+  // Add OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Add markers for each area covered
+  var areas = [
+    { name: "Huddersfield", coords: [53.6458, -1.785], description: "Main service area." },
+    { name: "Brighouse", coords: [53.7024, -1.7816], description: "Additional coverage area." },
+    { name: "Dewsbury East", coords: [53.6898, -1.6238], description: "Additional coverage area." },
+    { name: "Dewsbury West", coords: [53.6921, -1.6464], description: "Additional coverage area." },
+    { name: "Elland", coords: [53.6854, -1.8392], description: "Additional coverage area." },
+    { name: "Sowerby Bridge", coords: [53.7092, -1.9083], description: "Additional coverage area." },
+    { name: "Halifax", coords: [53.7259, -1.8612], description: "Additional coverage area." },
+    { name: "Huddersfield", coords: [53.6458, -1.7850], description: "Additional coverage area." },
+    { name: "Holmfirth", coords: [53.5714, -1.7878], description: "Additional coverage area." },
+    { name: "Meltham", coords: [53.5918, -1.8484], description: "Additional coverage area." },
+    { name: "Fenay Bridge", coords: [53.6342, -1.7324], description: "Additional coverage area." }
+
+    
+    // Add more areas as needed
+  ];
+
+  areas.forEach(area => {
+    L.marker(area.coords)
+      .addTo(map)
+      .bindPopup(`<b>${area.name}</b><br>${area.description}`);
+  });
+</script>
+
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="container py-5">
+  <div class="contact-details" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 20px;">
+    <h2 class="section-title mb-4">Get in touch.</h2>
+    <p>If you'd like more information about any of our services or need advice about your pet, get in touch today. We're always ready to take your call.</p>
+
+    <!-- Contact Details -->
+    <div class="contact-info" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
+      <div class="contact-item" style="display: flex; align-items: center; gap: 10px; font-size: 20px; color: #333;">
+        <i class="fas fa-phone" style="color: #4CAF50; font-size: 22px;"></i>
+        <a href="tel:+07931 869288" class="bouncy-phone" style="color: #333; text-decoration: none; font-weight: 500;">07931 869288</a>
+      </div>
+      <div class="contact-item" style="display: flex; align-items: center; gap: 10px; font-size: 20px; color: #333;">
+        <i class="fas fa-envelope" style="color: #4CAF50; font-size: 22px;"></i>
+        <a href="mailto:info@yourdomain.com" style="color: #333; text-decoration: none; font-weight: 500;">pawsomepetcareltd@outlook.com</a>
+      </div>
+      <div class="contact-item" style="display: flex; align-items: center; gap: 10px; font-size: 20px; color: #333;">
+        <i class="fab fa-facebook" style="color: #4CAF50; font-size: 22px;"></i>
+        <a href="https://facebook.com/pawsomepetcarelimited" target="_blank" style="color: #333; text-decoration: none; font-weight: 500;">Visit us on Facebook</a>
+      </div>
+      <div class="contact-item" style="display: flex; align-items: center; gap: 10px; font-size: 20px; color: #333;">
+  <i class="fab fa-facebook" style="color: #4CAF50; font-size: 22px;"></i>
+  <a href="https://www.tiktok.com/@pawsomepetcareltd" target="_blank" style="color: #333; text-decoration: none; font-weight: 500;">Visit us on TikToK</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Video Section -->
+<section id="videos" class="container py-5">
+  <h2 class="text-center mb-4">Watch Our Services in Action</h2>
+  
+
+  
+
+  <!-- First Video -->
+  <div class="video-container mb-4">
+    <div class="fb-video" data-href="https://www.facebook.com/yourpage/videos/first_video_id" data-width="500" data-show-text="false"></div>
+    <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fpawsomepetcarelimited%2Fvideos%2F1435787740462688%2F&show_text=false&width=560&t=25" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+  </div>
+
+
+
+<!-- Footer -->
+<footer style="background-color: #333; color: #fff; text-align: center; padding: 20px;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 15px;">
+    <!-- Copyright Section -->
+    <p style="margin: 0;">&copy; Paw-Some Pet Care Ltd 2024 Your Company. All rights reserved.</p>
+
+    <!-- Footer Links -->
+    <div style="display: flex; gap: 20px; justify-content: center;">
+      <a href="privacy.html" style="color: #fff; text-decoration: none; font-weight: 500;">Privacy Policy</a>
+      <a href="privacy.html" style="color: #fff; text-decoration: none; font-weight: 500;">Terms of Service</a>
+      <a href="https://www.facebook.com/pawsomepetcarelimited" style="color: #fff; text-decoration: none; font-weight: 500;">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Toggle more info in service section
+  function toggleInfo(button) {
+    const moreInfo = button.nextElementSibling;
+    moreInfo.classList.toggle('active');
+    button.textContent = moreInfo.classList.contains('active') ? 'Less Info' : 'More Info';
+  }
+</script>
+
+<!-- Cookie Banner -->
+<div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0, 0, 0, 0.8); color: white; padding: 15px 20px; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); z-index: 1000; display: flex; align-items: center; justify-content: space-between; max-width: 90%; width: 400px;">
+  <div style="flex: 1; font-size: 14px;">
+    <p style="margin: 0;">We use cookies to enhance your experience. By continuing to browse, you agree to our <a href="privacy.html" style="color: #EBC931; text-decoration: underline;">Privacy Policy</a>.</p>
+  </div>
+  <button onclick="acceptCookies()" style="background-color: #EBC931; color: white; border: none; padding: 8px 12px; margin-left: 15px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: background-color 0.3s;">
+    Got it!
+  </button>
+</div>
+
+<!-- Script to Handle Cookie Acceptance -->
+<script>
+  function acceptCookies() {
+    document.getElementById("cookie-banner").style.display = "none";
+    // Set a cookie or local storage flag if desired
+  }
+</script>
+
+
+</body>
+</html>
