@@ -2,15 +2,7 @@
 <html lang="en">
 <head>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YFFWEJQW10"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-YFFWEJQW10');
-</script>
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -504,20 +496,62 @@ h1, h2, .section-title {
 </script>
 
 <!-- Cookie Banner -->
-<div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0, 0, 0, 0.8); color: white; padding: 15px 20px; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); z-index: 1000; display: flex; align-items: center; justify-content: space-between; max-width: 90%; width: 400px;">
-  <div style="flex: 1; font-size: 14px;">
-    <p style="margin: 0;">We use cookies to enhance your experience. By continuing to browse, you agree to our <a href="privacy.html" style="color: #EBC931; text-decoration: underline;">Privacy Policy</a>.</p>
+<!-- Cookie Banner -->
+<div id="cookie-banner" style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); background-color: rgba(0, 0, 0, 0.85); color: white; padding: 10px 15px; border-radius: 6px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; max-width: 90%; width: 320px; text-align: center;">
+  <p style="margin: 0; font-size: 12px;">We use cookies to enhance your experience. By continuing, you agree to our <a href="privacy.html" style="color: #EBC931; text-decoration: underline;">Privacy Policy</a>.</p>
+  <div style="display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; justify-content: center;">
+    <button onclick="acceptCookies()" style="background-color: #EBC931; color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 12px; transition: background-color 0.3s; width: 70px;">
+      Accept
+    </button>
+    <button onclick="rejectCookies()" style="background-color: #FF4D4D; color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 12px; transition: background-color 0.3s; width: 70px;">
+      Reject
+    </button>
   </div>
-  <button onclick="acceptCookies()" style="background-color: #EBC931; color: white; border: none; padding: 8px 12px; margin-left: 15px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: background-color 0.3s;">
-    Got it!
-  </button>
 </div>
 
-<!-- Script to Handle Cookie Acceptance -->
+<!-- JavaScript to Handle Cookie Consent -->
 <script>
   function acceptCookies() {
+    document.cookie = "cookies_accepted=true; path=/; max-age=" + 60 * 60 * 24 * 365; // Expires in 1 year
     document.getElementById("cookie-banner").style.display = "none";
-    // Set a cookie or local storage flag if desired
+    loadCookies();
+  }
+
+  function rejectCookies() {
+    document.cookie = "cookies_accepted=false; path=/; max-age=" + 60 * 60 * 24 * 365; // Expires in 1 year
+    document.getElementById("cookie-banner").style.display = "none";
+    blockCookies();
+  }
+
+  window.onload = function() {
+    if (document.cookie.indexOf("cookies_accepted=true") !== -1) {
+      loadCookies();
+      document.getElementById("cookie-banner").style.display = "none";
+    } else if (document.cookie.indexOf("cookies_accepted=false") !== -1) {
+      blockCookies();
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+  };
+
+  function loadCookies() {
+    var script = document.createElement("script");
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-YFFWEJQW10"; // Replace UA-XXXXX-X with your tracking ID
+    script.async = true;
+    document.head.appendChild(script);
+
+    script.onload = function() {
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-YFFWEJQW10"); // Replace UA-XXXXX-X with your tracking ID
+    };
+  }
+
+  function blockCookies() {
+    console.log("Cookies are blocked.");
   }
 </script>
 
