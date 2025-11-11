@@ -358,12 +358,13 @@ h1, h2, .section-title {
   <!-- Areas Covered Section -->
 <section id="areas" class="container py-5 text-center">
   <h2 class="section-title mb-4">Areas We Cover</h2>
-  <p>Brighouse · Dewsbury East · Dewsbury West · Elland · Sowerby Bridge · Halifax · Huddersfield · Holmfirth · Meltham · Fenay Bridge</p>
+  <p>Brighouse · Dewsbury East · Dewsbury West · Halifax · Huddersfield · Holmfirth · Meltham · Fenay Bridge · Wakefield · Leeds · Manchester · Hull · Batley · Mirfield · Morley · Pudsey · Castleford · Pontefract · Salford</p>
   <div id="map" style="height: 200px;"></div> <!-- Set map container dimensions -->
 </section>
+
 <script>
   // Initialize map
-  var map = L.map('map').setView([53.643, -1.776], 10); // Adjust coordinates to your central area
+  var map = L.map('map').setView([53.7, -1.7], 8); // Adjusted for broader Yorkshire/North West coverage
   
   // Add OpenStreetMap tiles
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -379,13 +380,20 @@ h1, h2, .section-title {
     { name: "Elland", coords: [53.6854, -1.8392], description: "Additional coverage area." },
     { name: "Sowerby Bridge", coords: [53.7092, -1.9083], description: "Additional coverage area." },
     { name: "Halifax", coords: [53.7259, -1.8612], description: "Additional coverage area." },
-    { name: "Huddersfield", coords: [53.6458, -1.7850], description: "Additional coverage area." },
     { name: "Holmfirth", coords: [53.5714, -1.7878], description: "Additional coverage area." },
     { name: "Meltham", coords: [53.5918, -1.8484], description: "Additional coverage area." },
-    { name: "Fenay Bridge", coords: [53.6342, -1.7324], description: "Additional coverage area." }
-
-    
-    // Add more areas as needed
+    { name: "Fenay Bridge", coords: [53.6342, -1.7324], description: "Additional coverage area." },
+    { name: "Wakefield", coords: [53.6829, -1.4963], description: "Extended service area." },
+    { name: "Leeds", coords: [53.8008, -1.5491], description: "Extended service area." },
+    { name: "Manchester", coords: [53.4808, -2.2426], description: "Extended service area." },
+    { name: "Hull", coords: [53.7457, -0.3367], description: "Extended service area." },
+    { name: "Batley", coords: [53.7168, -1.6334], description: "Suburban coverage." },
+    { name: "Mirfield", coords: [53.6800, -1.6960], description: "Suburban coverage." },
+    { name: "Morley", coords: [53.7405, -1.6025], description: "Suburban coverage." },
+    { name: "Pudsey", coords: [53.7977, -1.6616], description: "Suburban coverage." },
+    { name: "Castleford", coords: [53.7250, -1.3564], description: "Suburban coverage." },
+    { name: "Pontefract", coords: [53.6924, -1.3128], description: "Suburban coverage." },
+    { name: "Salford", coords: [53.4830, -2.2935], description: "Greater Manchester area." }
   ];
 
   areas.forEach(area => {
@@ -395,7 +403,7 @@ h1, h2, .section-title {
   });
 </script>
 
-</section>
+
 
 <!-- Contact Section -->
 <section id="contact" style="background-color: #F7CA1A;">
