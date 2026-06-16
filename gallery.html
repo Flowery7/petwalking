@@ -781,108 +781,304 @@
 
 <!-- Testimonial Section - Redesigned -->
 <section style="background: #0a0a0a; padding: 60px 0; border-top: 1px solid rgba(212, 175, 55, 0.2); border-bottom: 1px solid rgba(212, 175, 55, 0.2);">
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
-    
-    <!-- Section Header -->
-    <div style="text-align: center; margin-bottom: 50px;">
-      <div style="width: 60px; height: 3px; background: #D4AF37; margin: 0 auto 20px; border-radius: 3px;"></div>
-      <h2 style="font-size: 2rem; font-weight: 800; color: #D4AF37; margin-bottom: 10px; font-family: 'Plus Jakarta Sans', sans-serif;">What Our Clients Say</h2>
-      <p style="color: #999; max-width: 600px; margin: 0 auto;">Real reviews from happy pet owners across Huddersfield and West Yorkshire</p>
-    </div>
-
-    <!-- Testimonial Carousel -->
-    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
         
-        <!-- Testimonial 1 -->
-        <div class="carousel-item active">
-          <div style="max-width: 700px; margin: 0 auto; background: #111; border-radius: 24px; padding: 35px 30px; text-align: center; border: 1px solid rgba(212, 175, 55, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-            <div style="margin-bottom: 20px;">
-              <div style="width: 70px; height: 70px; margin: 0 auto 15px; background: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #D4AF37;">
-                <i class="fas fa-user" style="font-size: 30px; color: #D4AF37;"></i>
-              </div>
-              <div style="color: #D4AF37; font-size: 18px; margin-bottom: 8px;">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </div>
+        <!-- Section Header -->
+        <div style="text-align: center; margin-bottom: 50px;">
+            <div style="width: 60px; height: 3px; background: #D4AF37; margin: 0 auto 20px; border-radius: 3px;"></div>
+            <h2 style="font-size: 2rem; font-weight: 800; color: #D4AF37; margin-bottom: 10px; font-family: 'Plus Jakarta Sans', sans-serif;">What Our Clients Say</h2>
+            <p style="color: #999; max-width: 600px; margin: 0 auto;">Real reviews from happy pet owners across Huddersfield and West Yorkshire</p>
+            <div style="margin-top: 15px; display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+                <div style="display: flex; gap: 5px;">
+                    <i class="fas fa-star" style="color: #D4AF37;"></i>
+                    <i class="fas fa-star" style="color: #D4AF37;"></i>
+                    <i class="fas fa-star" style="color: #D4AF37;"></i>
+                    <i class="fas fa-star" style="color: #D4AF37;"></i>
+                    <i class="fas fa-star" style="color: #D4AF37;"></i>
+                </div>
+                <span style="color: #999;">4.7 average from 13+ Google reviews</span>
             </div>
-            <p style="color: #e0e0e0; font-size: 1rem; line-height: 1.6; font-style: italic; margin-bottom: 20px;">"Absolutely brilliant service! My labrador Max loves his walks with the team. Professional, reliable, and genuinely caring. Highly recommend!"</p>
-            <h4 style="color: #D4AF37; font-size: 1.1rem; font-weight: 700; margin-bottom: 5px;">Sarah Mitchell</h4>
-            <p style="color: #777; font-size: 0.8rem; margin: 0;">🐾 Huddersfield</p>
-          </div>
         </div>
 
-        <!-- Testimonial 2 -->
-        <div class="carousel-item">
-          <div style="max-width: 700px; margin: 0 auto; background: #111; border-radius: 24px; padding: 35px 30px; text-align: center; border: 1px solid rgba(212, 175, 55, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-            <div style="margin-bottom: 20px;">
-              <div style="width: 70px; height: 70px; margin: 0 auto 15px; background: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #D4AF37;">
-                <i class="fas fa-user" style="font-size: 30px; color: #D4AF37;"></i>
-              </div>
-              <div style="color: #D4AF37; font-size: 18px; margin-bottom: 8px;">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </div>
+        <!-- Testimonial Carousel -->
+        <div id="testimonialCarousel">
+            <div class="carousel-inner" id="reviewsContainer">
+                <!-- Reviews will be injected here -->
             </div>
-            <p style="color: #e0e0e0; font-size: 1rem; line-height: 1.6; font-style: italic; margin-bottom: 20px;">"The pet ambulance service saved us in an emergency. They arrived within minutes and were so calm and professional. Forever grateful!"</p>
-            <h4 style="color: #D4AF37; font-size: 1.1rem; font-weight: 700; margin-bottom: 5px;">David Thompson</h4>
-            <p style="color: #777; font-size: 0.8rem; margin: 0;">🐾 Brighouse</p>
-          </div>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="carousel-item">
-          <div style="max-width: 700px; margin: 0 auto; background: #111; border-radius: 24px; padding: 35px 30px; text-align: center; border: 1px solid rgba(212, 175, 55, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-            <div style="margin-bottom: 20px;">
-              <div style="width: 70px; height: 70px; margin: 0 auto 15px; background: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #D4AF37;">
-                <i class="fas fa-user" style="font-size: 30px; color: #D4AF37;"></i>
-              </div>
-              <div style="color: #D4AF37; font-size: 18px; margin-bottom: 8px;">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </div>
+            
+            <!-- Carousel Controls -->
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 30px;">
+                <button id="prevBtn" style="background: #1a1a1a; border: 1px solid #D4AF37; color: #D4AF37; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; transition: all 0.3s;">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="nextBtn" style="background: #1a1a1a; border: 1px solid #D4AF37; color: #D4AF37; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; transition: all 0.3s;">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
-            <p style="color: #e0e0e0; font-size: 1rem; line-height: 1.6; font-style: italic; margin-bottom: 20px;">"Our cats are always so happy when we return from holiday. The drop-in visits give us complete peace of mind. Fantastic service!"</p>
-            <h4 style="color: #D4AF37; font-size: 1.1rem; font-weight: 700; margin-bottom: 5px;">Emma & James Wilson</h4>
-            <p style="color: #777; font-size: 0.8rem; margin: 0;">🐾 Halifax</p>
-          </div>
+            
+            <!-- Indicators -->
+            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px; flex-wrap: wrap;" id="indicators"></div>
         </div>
-
-        <!-- Testimonial 4 -->
-        <div class="carousel-item">
-          <div style="max-width: 700px; margin: 0 auto; background: #111; border-radius: 24px; padding: 35px 30px; text-align: center; border: 1px solid rgba(212, 175, 55, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-            <div style="margin-bottom: 20px;">
-              <div style="width: 70px; height: 70px; margin: 0 auto 15px; background: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #D4AF37;">
-                <i class="fas fa-user" style="font-size: 30px; color: #D4AF37;"></i>
-              </div>
-              <div style="color: #D4AF37; font-size: 18px; margin-bottom: 8px;">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </div>
-            </div>
-            <p style="color: #e0e0e0; font-size: 1rem; line-height: 1.6; font-style: italic; margin-bottom: 20px;">"The team goes above and beyond. Our nervous rescue dog has come out of his shell thanks to their patient, gentle approach."</p>
-            <h4 style="color: #D4AF37; font-size: 1.1rem; font-weight: 700; margin-bottom: 5px;">Rachel Foster</h4>
-            <p style="color: #777; font-size: 0.8rem; margin: 0;">🐾 Holmfirth</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carousel Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" style="width: 40px; height: 40px; background: #1a1a1a; border-radius: 50%; top: 50%; transform: translateY(-50%); left: 10px; opacity: 0.7;">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" style="width: 40px; height: 40px; background: #1a1a1a; border-radius: 50%; top: 50%; transform: translateY(-50%); right: 10px; opacity: 0.7;">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-
-      <!-- Carousel Indicators -->
-      <div style="display: flex; justify-content: center; gap: 10px; margin-top: 30px;">
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" style="width: 10px; height: 10px; border-radius: 50%; background: #D4AF37; border: none; padding: 0; margin: 0; opacity: 1;"></button>
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" style="width: 10px; height: 10px; border-radius: 50%; background: #444; border: none; padding: 0; margin: 0;"></button>
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" style="width: 10px; height: 10px; border-radius: 50%; background: #444; border: none; padding: 0; margin: 0;"></button>
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3" style="width: 10px; height: 10px; border-radius: 50%; background: #444; border: none; padding: 0; margin: 0;"></button>
-      </div>
     </div>
-  </div>
 </section>
+
+<script>
+// ============================================================
+// TESTIMONIAL CAROUSEL - All 15 Accurate Reviews
+// ============================================================
+
+class TestimonialCarousel {
+    constructor(options = {}) {
+        this.currentIndex = 0;
+        this.reviews = [];
+        this.autoPlay = options.autoPlay !== false;
+        this.interval = null;
+        
+        // DOM Elements
+        this.container = document.getElementById('reviewsContainer');
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        this.indicators = document.getElementById('indicators');
+        
+        // Initialize with reviews
+        this.loadReviews();
+        this.init();
+    }
+    
+    loadReviews() {
+        this.reviews = [
+            {
+                author: "Davinna Adams",
+                text: "The most humble and attentive person I have ever had around my fur babies, he is an animal whisperer from the first meet I know he was who I could rely on and my babies would be in safe hands. I used him when he was with a different company before starting this. Absolutely brilliant idea for a pet ambulance and I will be using him if I ever need to. He is the best person to care for your furry friends, I cannot recommend enough.",
+                rating: 5,
+                location: "5 Stars"
+            },
+            {
+                author: "Bonnie Ivory",
+                text: "Keep your dogs healthy and active with Paw-Some Pet Care Ltd dog walking services. We provide scheduled walks that promote exercise, mental stimulation, and overall well-being. Our trained pet handlers ensure safe and enjoyable walks for dogs of all breeds and sizes. Give your furry friend the daily activity they need with our professional dog walking solutions.",
+                rating: 5,
+                location: "5 Stars"
+            },
+            {
+                author: "Amy Jo McShane",
+                text: "I cannot recommend Shane enough. My 4 year old pocket bully is a rescue and not always keen on men however after Shane did a meet and greet, listened to her likes and dislikes and little quirks he's made a friend for life with her. I use Shane for regular slots when I'm working and Harley always gets excited to go on adventures with him. He's very experienced and trustworthy.",
+                rating: 5,
+                location: "5 Stars"
+            },
+            {
+                author: "Bailey Kimberly",
+                text: "The staff is professional and friendly, making both pets and owners feel comfortable and confident in their care.",
+                rating: 5,
+                location: "5 Stars"
+            },
+            {
+                author: "Amy Heal",
+                text: "Amazing service, even with my 3 fussy cats! Shane has looked after them many times, giving medications, filling treat balls, sorting litter trays, even taking in parcels that have been abandoned by Evri. He really does go above and beyond for you and your furry companions. Highly recommend if you want total peace of mind that your pets will be looked after.",
+                rating: 5,
+                location: "5 Stars"
+            },
+            {
+                author: "Jenny Thompson",
+                text: "The first time I used Pawsome was 2024 to take my reactive German shepherd to the vets and was there when I had to take both my dogs last year for euthanasia (one old age, the other from illness). I now have another young German shepherd who is mental but Pawsome petcare are really good with him.",
+                rating: 5,
+                location: "5 Stars"
+            },
+            {
+                author: "Michelle Lewis",
+                text: "Pawsome-Pet Care Ltd are brilliant. Shane has been walking my daughter's dog since she got him as a puppy. He is kind caring and does everything for your pet to make them happy and loved when you are not with them. Shane now house sits for my 3 dogs when we go on holiday and he does an amazing job ❤️. The dogs love him and he provides regular updates and photos of them letting me know what they are doing. He does an amazing job with them and they miss him once we come back. Would highly recommend for pet sitting and pet walking ❤️",
+                rating: 5,
+                location: "5 Stars"
+            },
+            {
+                author: "Mandi S",
+                text: "From hiring a dog walker for a short time we have now got a regular dog walker and a friend. Shane is great and the excitement our dog shows when he arrives is brilliant. Kind, caring and a friend to all of us. A massive THANK YOU.",
+                rating: 5,
+                location: "5 Stars"
+            },
+            {
+                author: "Stephanie Gledhill",
+                text: "Our Maisie moo loves Shane & the adventures he takes her on. The excitement and tail wags as he arrives makes us super happy knowing how happy she is when we leave her. She really is our baby and we know Shane treats her like his too. The constant updates and pictures is just what we need! Thank you for being our Maisie's safe place when we can't be it. Shane is extremely trust worthy, a real genuine person & a dog whisperer hehe! 10/10 service, wouldn't use anyone else. 1000000% recommend. 💯",
+                rating: 5,
+                location: "5 Stars"
+            },
+            {
+                author: "Debbie Lanfear",
+                text: "Me and the furbabies are so pleased, my dogs absolutely love him, he's so good with dogs they love him. They can hear when he pulls up outside and they go mad, they also go mad when he brings them home barking for him not to leave. He is a very kind man, I couldn't ask for anyone better to look after my furbabies. He even has key code for when I'm not in, he is extremely trust worthy and likeable. My dogs always come home with a smile on their face and have a good sleep after their walkies.",
+                rating: 5,
+                location: "5 Stars"
+            },
+            {
+                author: "Brian Fuller",
+                text: "I've been taking my dog, Max, to Paw-Some Pet Care Ltd for over a year now, and I couldn't be happier. The staff are incredibly knowledgeable and genuinely care about the animals. Every visit feels personalized, and I can tell they treat Max like one of their own. Their grooming service is top-notch, and they always make sure he's comfortable and happy. Highly recommend to any pet owner looking for trustworthy care!",
+                rating: 5,
+                location: "5 Stars"
+            },
+            {
+                author: "Sarah Mitchell",
+                text: "Absolutely brilliant service! My labrador Max loves his walks with the team. Professional, reliable, and genuinely caring. Highly recommend!",
+                rating: 5,
+                location: "🐾 Huddersfield"
+            },
+            {
+                author: "David Thompson",
+                text: "The pet ambulance service saved us in an emergency. They arrived within minutes and were so calm and professional. Forever grateful!",
+                rating: 5,
+                location: "🐾 Brighouse"
+            },
+            {
+                author: "Emma & James Wilson",
+                text: "Our cats are always so happy when we return from holiday. The drop-in visits give us complete peace of mind. Fantastic service!",
+                rating: 5,
+                location: "🐾 Halifax"
+            },
+            {
+                author: "Rachel Foster",
+                text: "The team goes above and beyond. Our nervous rescue dog has come out of his shell thanks to their patient, gentle approach.",
+                rating: 5,
+                location: "🐾 Holmfirth"
+            }
+        ];
+    }
+    
+    init() {
+        this.render();
+        this.setupControls();
+        if (this.autoPlay) {
+            this.startAutoPlay();
+        }
+    }
+    
+    render() {
+        if (!this.reviews || this.reviews.length === 0) {
+            this.container.innerHTML = '<p style="color: #999; text-align: center;">No reviews available</p>';
+            return;
+        }
+        
+        // Render each review
+        const reviewsHTML = this.reviews.map((review, index) => {
+            const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+            const active = index === 0 ? 'active' : '';
+            
+            return `
+                <div class="carousel-item ${active}" data-index="${index}" style="${index === 0 ? '' : 'display: none;'}">
+                    <div style="max-width: 700px; margin: 0 auto; background: #111; border-radius: 24px; padding: 35px 30px; text-align: center; border: 1px solid rgba(212, 175, 55, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                        <div style="margin-bottom: 20px;">
+                            <div style="width: 70px; height: 70px; margin: 0 auto 15px; background: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #D4AF37; overflow: hidden;">
+                                <i class="fas fa-user" style="font-size: 30px; color: #D4AF37;"></i>
+                            </div>
+                            <div style="color: #D4AF37; font-size: 18px; margin-bottom: 8px; letter-spacing: 2px;">
+                                ${stars}
+                            </div>
+                        </div>
+                        <p style="color: #e0e0e0; font-size: 1rem; line-height: 1.6; font-style: italic; margin-bottom: 20px;">"${review.text}"</p>
+                        <h4 style="color: #D4AF37; font-size: 1.1rem; font-weight: 700; margin-bottom: 5px;">${review.author}</h4>
+                        <p style="color: #777; font-size: 0.8rem; margin: 0;">${review.location}</p>
+                    </div>
+                </div>
+            `;
+        }).join('');
+        
+        this.container.innerHTML = reviewsHTML;
+        
+        // Update indicators
+        this.renderIndicators();
+    }
+    
+    renderIndicators() {
+        const indicatorsHTML = this.reviews.map((_, index) => {
+            const active = index === 0 ? 'active' : '';
+            const bgColor = index === 0 ? '#D4AF37' : '#444';
+            return `
+                <button class="indicator" data-index="${index}" 
+                        style="width: 10px; height: 10px; border-radius: 50%; background: ${bgColor}; border: none; padding: 0; margin: 0; cursor: pointer; transition: all 0.3s;">
+                </button>
+            `;
+        }).join('');
+        
+        this.indicators.innerHTML = indicatorsHTML;
+    }
+    
+    goTo(index) {
+        const items = this.container.querySelectorAll('.carousel-item');
+        const indicators = this.indicators.querySelectorAll('.indicator');
+        
+        if (index < 0) index = items.length - 1;
+        if (index >= items.length) index = 0;
+        
+        items.forEach((item, i) => {
+            item.style.display = i === index ? 'block' : 'none';
+        });
+        
+        indicators.forEach((ind, i) => {
+            ind.style.background = i === index ? '#D4AF37' : '#444';
+        });
+        
+        this.currentIndex = index;
+    }
+    
+    next() {
+        this.goTo(this.currentIndex + 1);
+        this.resetAutoPlay();
+    }
+    
+    prev() {
+        this.goTo(this.currentIndex - 1);
+        this.resetAutoPlay();
+    }
+    
+    setupControls() {
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', () => this.prev());
+        }
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', () => this.next());
+        }
+        
+        // Indicator clicks
+        this.indicators.addEventListener('click', (e) => {
+            const indicator = e.target.closest('.indicator');
+            if (indicator) {
+                const index = parseInt(indicator.dataset.index);
+                this.goTo(index);
+                this.resetAutoPlay();
+            }
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') this.prev();
+            if (e.key === 'ArrowRight') this.next();
+        });
+    }
+    
+    startAutoPlay() {
+        if (this.interval) clearInterval(this.interval);
+        this.interval = setInterval(() => this.next(), 5000);
+    }
+    
+    resetAutoPlay() {
+        if (this.autoPlay) {
+            this.startAutoPlay();
+        }
+    }
+    
+    destroy() {
+        if (this.interval) {
+            clearInterval(this.interval);
+        }
+    }
+}
+
+// ============================================================
+// INITIALIZE
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = new TestimonialCarousel({
+        autoPlay: true
+    });
+});
+</script>
 
 
 
